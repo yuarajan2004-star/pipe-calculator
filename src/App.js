@@ -1,5 +1,6 @@
 // App.js — Day 2, Phase 6
 // Adds: Save Calculation button + History list below the calculator.
+// Adds: PipeCalc Copilot AI agent chat panel.
 
 import React, { useState, useEffect } from 'react'
 import { supabase } from './supabaseClient'
@@ -8,6 +9,7 @@ import Calculator from './Calculator'
 import Results from './Results'
 import History from './History'
 import PressureChart from './PressureChart'
+import CopilotChat from './components/CopilotChat'
 import { runAllCalculations } from './calculations'
 
 export default function App() {
@@ -191,6 +193,10 @@ export default function App() {
 
       <div style={s.fullWidth}>
         <History session={session} refreshTrigger={refreshTrigger} />
+      </div>
+
+      <div style={{ ...s.fullWidth, marginTop: '24px' }}>
+        <CopilotChat />
       </div>
 
     </div>
